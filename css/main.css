@@ -1,0 +1,173 @@
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --paleBlue: hsl(225, 100%, 98%);
+    --brightBlue: hsl(245, 75%, 52%);
+    --veryPaleBlue: hsl(0, 0%, 100%);
+    --desaturatedBlue: hsl(224, 23%, 55%);
+    --darkBlue: hsl(223, 47%, 23%);
+    --planBackground: hsl(255, 70, 96);
+    --cardShadow: rgba(136, 149, 221, 0.60);
+    --onButtonHover: rgb(117, 97, 184);
+}
+
+body {
+    background-color: var(--paleBlue);
+}
+
+.background-image {
+    width: 100%;
+    position:absolute;
+    height: 50%;
+}
+
+@media (max-width:600px) {
+    .background-image {
+        visibility: hidden;
+    }
+}
+
+main {
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.card {
+    max-width: 27rem;
+    background-color: var(--veryPaleBlue);
+    border-radius: 20px;
+    filter: drop-shadow(0px 22px 28px var(--cardShadow));
+    height: 43.5rem;
+}
+
+
+.card__hero {
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: auto;
+}
+
+.card__header {
+    color: var(--darkBlue);
+}
+
+.card__text {
+    letter-spacing: 0.5px;
+    line-height: 26px;
+    color: var(--desaturatedBlue);
+    margin: 1.5em 0;
+}
+
+.card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 2rem 0;
+    text-align: center;
+    max-height: inherit;
+    margin-top: 2rem;
+}
+
+.card__price {
+    border-radius: 10px;
+    background: var(--paleBlue);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.plan__price {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: start;
+    margin: 0 0 0 20px;
+    height: 100%;
+    justify-content: space-evenly;
+}
+
+.plan__annual {
+    color: var(--darkBlue);
+}
+
+.plan__amount {
+    color: var(--desaturatedBlue);
+}
+
+.plan__change:hover {
+    color: var(--onButtonHover);
+    text-decoration: none;
+}
+
+.button__group {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-end;
+    height: 10rem;
+    justify-content: flex-end;
+}
+
+.card__button {
+    padding: 15px 0;
+    font-family: 'Red Hat Display', sans-serif;
+    border-radius: 13px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.card__button--proceed {
+    background: var(--brightBlue);
+    color: white;
+    filter: drop-shadow(0px 14px 8px var(--cardShadow));
+    transition: background-color 0.3s ease-out;
+}
+
+.card__button--proceed:hover {
+    background-color: var(--onButtonHover);
+}
+
+.card__button--cancel {
+    background: transparent;
+    color: var(--desaturatedBlue);
+    margin-top: 18px;
+}
+
+.card__button--cancel:hover {
+    color: var(--darkBlue);
+}
+
+@media screen and (max-width: 450px) {
+    .card {
+        height: 39rem;
+    }
+    .card__body {
+        padding: 0 1rem 0;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+}
